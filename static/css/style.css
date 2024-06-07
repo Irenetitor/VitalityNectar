@@ -1,0 +1,1024 @@
+/*********************************************************************************************************/
+/*********************************** Global styles *******************************************************/
+/*********************************************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 16px; /* 1rem */
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    color: #313131;
+    font-size: 2em;
+}
+
+.button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    display: inline-block;
+    color: #fff;
+    font: size 20px;
+    background-color: rgb(36, 171, 220);
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 128px;
+    padding-right: 128px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+header {
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    font-size: 32px;
+}
+
+header .container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+header .container h2 span {
+    font-weight: 600;
+    font-size: 2rem; 
+}
+
+@media (max-width: 600px) {
+    header .container h2 {
+        font-size: 1.5rem;
+    }
+    header .container h2 span {
+        font-size: 1.5rem; 
+    }
+}
+
+header .container nav {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(5, auto);
+}
+
+@media (max-width: 1200px) {
+    header .container nav {
+        display: none;
+    }
+}
+
+header .container nav a {
+    color: inherit;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.is-scrolling {
+    background-color: #d3330b;  /************************************* COLOR  */
+}
+
+
+/* START - style for hamburger icon */
+.hamburger {
+    position: relative;
+    display: block;
+    width: 2.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: none;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 0.3rem;
+    background-color: #fff;
+    margin: 0.4rem 0px;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: "";
+    display: block;
+    height: 0.3rem;
+    background-color: #ffa690;
+    margin: 0.4rem 0px;
+    transition: 0.4s;
+}
+
+@media (max-width: 1200px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-6px, 9px);
+}
+
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-6px, -9px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+/* END - style for hamburger icon */
+
+/*********************************************************************************************************/
+/*********************************** End - Global styles *************************************************/
+/*********************************************************************************************************/
+
+/*********************************************************************************************************/
+/*********************************** Start - style for mobile nav ****************************************/
+/*********************************************************************************************************/
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 50%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: #9c5f37;  /************************************* COLOR  */
+    padding-top: 7rem;
+    transition: 0.4s;
+}
+
+.mobile-nav a {
+    display: block;
+    text-align: center;
+    width: 50%;
+    max-width: 12rem;
+    margin: 0 auto 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #86440a;  /************************************* COLOR  */
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 512px) {
+    .mobile-nav a {
+        font-size: 0.9em;
+        width: 70%;
+    }
+}
+
+.mobile-nav a:hover {
+    background-color: #65401d;  /************************************* COLOR  */
+}
+
+.mobile-nav.is-active {
+    left: 50%;
+}
+/* END - style for mobile nav menu */
+
+/* START - Banner styles for all pages */
+main section.banner {
+    color: #ffffff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-position: top left; 
+    background-size: cover;
+}
+
+main section.banner:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color:  #5f2f01e0;  /* COLOR  */
+    opacity: 0.8
+}
+
+main section.banner .container {
+    position: relative;
+    z-index: 1
+}
+
+main section.banner .container h1 {
+    font-size: 3em;
+    margin-bottom: 32px
+}
+
+main section.banner .container h1 span {
+    color: #f688f6f2;
+    font-size: 1em;
+}
+
+main section.banner .container h3 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: #f1e9ee;
+}
+@media (max-width: 1024px) {
+    main section.banner .container h1 {
+        font-size: 1.7em;
+        margin-bottom: 16px
+    }
+    
+    main section.banner .container h1 span {
+        font-size: 1em;
+    }
+    
+    main section.banner .container h3 {
+        font-size: 1.2em;
+        margin-bottom: 16px;
+    }
+}
+/* END - Banner styles for all pages */
+
+/* START - Styles for section headers with separator line below */
+main section .container .dual-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section .container .dual-header h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+main section .container .dual-header .separator-wrap {
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom:2em;
+}
+
+.separator {
+    width: 15%;
+    height: 5px;
+    display: block;
+    margin: 0;
+}
+
+.separator-one {
+    background-color: darkblue
+}
+
+.separator-two{
+    background-color: #ffa690
+}
+/* END - Styles for section headers with separator line below */
+/*********************************************************************************************************/
+/*********************************** End - style for mobile nav ******************************************/
+/*********************************************************************************************************/
+
+/*********************************************************************************************************/
+/*********************************** Start - style for Home Page *****************************************/
+/*********************************************************************************************************/
+main section.home-banner {
+    min-height: 100vh;
+    background-image: url("../img/banner_general.jpg");
+}
+
+main section.reason {
+    padding-top: 3rem;
+}
+main section.reason .container .tab-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fbc83dc3;   /************************************* COLOR  */
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+    main section.reason .container .tab-container {
+        flex-direction: column;
+    }
+}
+
+main section.reason .container .tab-container .tab {
+    cursor: pointer;
+    padding: 1rem;
+    border: 1px solid #1d2545;
+    border-radius: 0.5rem;
+    background-color: #e7e7ff;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+main section.reason .container .tab-container .tab:hover {
+    background-color: #ffff;
+}
+
+/* Hide tab content by default */
+main section.reason .container .tab-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #1d2545;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+/* Show tab content when tab is active */
+main section.reason .container .tab-container .tab.active {
+    background-color: #ffffff;
+}
+
+main section.reason .container .tab-container .tab.active .tab-content {
+    display: block;
+}
+
+main section.quotes {
+    padding-top: 3rem;
+}
+
+main section.sentences .container {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+main section.sentences .container .author {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #555;
+}
+
+main section.quotes .quote-container {
+    max-width: 240rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f8f8e5; /************************************* COLOR ************************ */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+main section.quotes .quote-container .quote {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+main section.quotes .quote-container .quote .author {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+}
+/*********************************************************************************************************/
+/*********************************** End - style for Home Page *******************************************/
+/*********************************************************************************************************/
+
+/*********************************************************************************************************/
+/*********************************** Start - style for faqs Page *****************************************/
+/*********************************************************************************************************/
+main section.faq-banner {
+    min-height: 60vh;
+    background-image: url("../img/banner_general.jpg");
+}
+
+main section.faqs {
+    background-color: #eee;
+    padding-top: 64px;
+}
+
+main section.user-faq {
+    padding-top: 0;
+}
+
+main section.faqs .container{
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+main section.faqs .container .faqs-list {
+    display: block;
+    /* grid-template-rows: repeat(4, 1fr);
+    grid-gap: 16px; */
+}
+
+main section.faqs .container .faqs-list .faq {
+    /* background-color: #5689639d; */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(58, 11, 75, 0.5);
+    margin-bottom: 0.8rem
+    /* display: flex; */
+}
+
+.active,
+.question:hover {
+    background-color: rgb(213, 220, 236);
+}
+
+main section.faqs .container .faqs-list .faq .question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 2rem 2.5rem;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    align-items: center;
+    font-weight: bold;
+}
+
+main section.faqs .container .faqs-list .faq .question i {
+    font-size: 1.6rem;
+}
+
+main section.faqs .container .faqs-list .faq .answer {
+    padding: 0 2rem 2.5rem 2rem;
+    overflow: hidden;
+    background-color: rgb(213, 220, 236);
+    display: none;
+}
+
+main section.faqs .container .faqs-list .faq .answer p {
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.4;
+}
+
+@media (max-width: 1268px) {
+    /* main section.faqs .container .faqs-list .faq .content ul li {
+        font-size: 0.8em;
+    } */
+}
+
+@media (max-width:1024px) {
+    main section.faqs {
+        padding-top: 64px;
+    }
+}
+
+@media (max-width:512px) {
+    main section.faqs .container .faqs-list .faq {
+        display: inline;
+    }
+}
+
+main section.question-form {
+    background-color: #d2e4f1da;
+}
+
+main section.question-form .container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+main section.question-form .container form {
+    margin: 0 auto;
+    max-width: 42rem;
+}
+
+main section.question-form .container form .content {
+    margin-bottom: 1rem;
+}
+
+main section.question-form .container form .content .form-textarea {
+    width: 100%;
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1em;
+    color: #313131;
+}
+
+main section.question-form .container form .content .form-textarea::placeholder{
+    color: #aaa;
+}
+
+main section.question-form form .submit-btn {
+    text-align: right;
+}
+
+main section.question-form form .submit-btn input{
+    font-size: 0.8em;
+}
+/*********************************************************************************************************/
+/*********************************** End - style for faqs Page *******************************************/
+/*********************************************************************************************************/
+
+/*********************************************************************************************************/
+/*********************************** Start - style for Exercise Page *************************************/
+/*********************************************************************************************************/
+main section.exercise-banner {
+    min-height: 60vh;
+    background-image: url("../img/banner_general.jpg");
+}
+
+main section.exercises {
+    background-color: #eee;
+    padding-top: 64px;
+}
+
+main section.exercises .container{
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+main section.exercises .container .exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+}
+
+@media (max-width: 900px) {
+    main section.exercises .container .exercises-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    main section.exercises .container .exercises-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    main section.exercises .container .exercises-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+main section.exercises .container .exercises-grid .exercise {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+main section.exercises .container .exercises-grid .exercise .content-img {
+    z-index: 80;
+    object-fit: cover;
+    width: 100%;
+    height: 16rem;
+    display: block;
+}
+
+main section.exercises .container .exercises-grid .exercise .content {
+    /* opacity: 0; */
+    color: #fff;
+    /* padding: 16px; */
+    transition: 0.5s;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    height: 100%;
+    display: block;
+}
+
+main section.exercises .container .exercises-grid .exercise .content .exercise-title{
+    opacity: 1;
+    background-color: #2f1900e0;  /************************************* COLOR ************************ */
+    padding: 16px;
+}
+
+main section.exercises .container .exercises-grid .exercise .content .description{
+    opacity: 0;
+    padding: 16px;
+}
+
+main section.exercises .container .exercises-grid .exercise:hover .content {
+    opacity: 1;
+    padding: 16px;
+    background-color: #2f1e00e0;  /************************************* COLOR ************************ */
+}
+
+main section.exercises .container .exercises-grid .exercise:hover .content .exercise-title{
+    border-radius: 20px;
+}
+
+main section.exercises .container .exercises-grid .exercise:hover .content .description{
+    opacity: 1;
+}
+
+main section.exercises .container .exercises-grid .exercise .content p {
+    font-size: 1em;
+    margin-bottom: 16px;
+}
+
+/* END - style for Exercise page */
+
+/* STRAT - style for Exercise detail page */
+main section.exercises .container .exercise-title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+main section.exercises .container .exercise-name {
+    font-size: 1.4em;
+    text-align: center;
+    font-style: italic;
+}
+
+main section.exercises .container .exercise-detail-grid {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 16px;
+}
+
+main section.exercises .container .exercise-detail-grid .exercise-detail {
+    background-color: #e3f1fe;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(58, 11, 75, 0.5);
+    display: flex;
+}
+
+main section.exercises .container .exercise-detail-grid .exercise-detail .img-box {
+    display: block;
+    border-right: 5px solid #f37d2a;
+    height: 100%;
+}
+
+main section.exercises .container .exercise-detail-grid .exercise-detail .img-box .img {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 200px; 
+}
+
+@media (max-width: 768px) {
+    main section.exercises .container .exercise-detail-grid .exercise-detail  {
+        display: inline;
+    }
+
+    main section.exercises .container .exercise-detail-grid .exercise-detail .img-box {
+        border-right: 0px;
+        width: 100%;
+        height: 105px;
+        border-bottom: 5px solid #f37d2a;
+    }
+
+    main section.exercises .container .exercise-detail-grid .exercise-detail .img-box .img {
+        width: 100%;
+        height: 100px;
+    }
+}
+
+main section.exercises .container .exercise-detail-grid .exercise-detail .content {
+    padding: 16px;;
+}
+
+main section.exercises .container .exercise-detail-grid .exercise-detail .content ol li {
+    padding-top: 9px;
+    margin-left: 16px;
+    font-size: 1em;
+}
+
+@media (max-width: 1268px) {
+    main section.tips .container .exercise-detail-grid .exercise-detail .content ul li {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width:1024px) {
+    main section.tips {
+        padding-top: 64px;
+    }
+    main section.tips .container .exercise-detail-grid .exercise-detail .content ul li {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width:512px) {
+    main section.tips .container .exercise-detail-grid .exercise-detail {
+        display: inline;
+    }
+    
+    main section.tips .container .exercise-detail-grid .exercise-detail .img-box {
+        border-right: 0px;
+        width: 100%;
+        height: 105px;
+        border-bottom: 5px solid #f37d2a;
+    }
+    
+    main section.tips .container .exercise-detail-grid .exercise-detail .img-box .img {
+        width: 100%;
+        height: 100px;
+    }
+
+    main section.tips .container .exercise-detail-grid .exercise-detail .content h3 {
+        font-size: 0.9em;
+    }
+
+    main section.tips .container .exercise-detail-grid .exercise-detail .content ul li {
+        font-size: 0.7em;
+    }
+}
+/* END - style for Exercise detail page */
+
+/* START - style for Find Your Style page */
+main section.styles-banner {
+    min-height: 60vh;
+    background-image: url("../img/banner_general.jpg");
+}
+
+main section.styles {
+    background-color: #eee;
+    padding-top: 64px;
+}
+
+main section.styles .container{
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+/* START - style for material section */
+
+main section.styles .container .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+}
+
+@media (max-width: 1024px) {
+    main section.materials {
+        padding-top: 64px;
+    }
+    
+    main section.styles .container .materials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    main section.styles .container .materials-grid {
+        grid-template-columns: 2fr;
+    }
+}
+
+main section.styles .container .materials-grid .material {
+    background-color: #e3f1fe;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(15, 6, 118, 0.476);
+}
+
+main section.styles .container .materials-grid .material .img-box {
+    display: block;
+    width: 100%;
+    border-bottom: 5px solid #f37d2a;
+}
+
+main section.styles .container .materials-grid .material .img-box .img {
+    display: block;
+    width: 100%;
+    height: 398px;
+    object-fit: cover;
+}
+
+main section.styles .container .materials-grid .material .content {
+    padding: 16px;
+    font-size: 1em;
+}
+
+main section.styles .container .materials-grid .material .content ul {
+    padding-left: 20px;
+}
+
+@media (max-width: 1268px) {
+    main section.styles .container .materials-grid .material .content ul li {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 1024px) {
+    main section.styles .container .materials-grid .material .content ul li {
+        font-size: 0.9em;
+    }
+}
+/* END - style for material section */
+/* END - style for Find Your Style page */
+
+/* START - style for Get in touch page */
+main section.contact-banner {
+    min-height: 60vh;
+    background-image: url("../img/banner_general.jpg");
+}
+
+main section.contacts {
+    background-color: #eee;
+    padding-top: 64px;
+}
+
+main section.contacts .container{
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+
+/* END - style for Get in touch page */
+
+/* START - style for contact section */
+main .contact {
+    background-color:  rgb(213, 220, 236);
+}
+
+main .experience {
+    background-color:  rgb(255, 255, 255);
+}
+
+main section.contact .container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+main section.contact .container .experience {
+    display: flex;
+}
+
+main section.contact .container .experience .info {
+    width: 50%; 
+    padding-right: 1rem;
+}
+
+main section.contact .container .experience .feedback {
+    width: 50%; 
+    padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    main section.contact .container .experience {
+        flex-direction: column;
+    }
+    main section.contact .container .experience .info {
+        width: 100%; 
+        padding: 1rem;
+    }
+    main section.contact .container .experience .feedback {
+        width: 100%; 
+        padding: 1rem;
+    }
+}
+
+main section.contact .container .experience .info .img-box {
+    display: block;
+    width: 100%;
+    border-bottom: 5px solid #f37d2a;
+}
+
+main section.contact .container .experience .info .img-box .img {
+    display: block;
+    width: 100%;
+    height: 398px;
+    object-fit: cover;
+}
+
+main section.contact .container .experience .info .content {
+    padding: 16px;
+    font-size: 1em;
+}
+
+main section.contact .container .experience .feedback form {
+    margin: 0 auto;
+    width: 100%;
+}
+
+main section.contact .container .experience .feedback form .feedback-form-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 16px;
+    margin-bottom: 16px;
+}
+
+main section.contact .container .experience .feedback form .feedback-form-grid .form-input-feedback, 
+main section.contact .container .experience .feedback form .feedback-form-grid .form-textarea-feedback {
+    appearance: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 1em;
+    color: #313131;
+}
+
+main section.contact .container form {
+    margin: 0 auto;
+    max-width: 680px;
+}
+
+main section.contact .container form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    margin-bottom: 16px;
+}
+
+@media (max-width:767px) {
+    main section.contact .container form .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+main section.contact .container form .form-grid .form-input, 
+main section.contact .container form .form-grid .form-textarea {
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 1em;
+    color: #313131;
+}
+
+main section.contact .container form .form-grid .form-textarea {
+    grid-column: 1/-1;
+}
+
+main section.contact .container form .form-grid .form-input::placeholder, 
+main section.contact .container form .form-grid .form-textarea::placeholder,
+main section.contact .container .experience .section-column form .feedback-form-grid .form-input-feedback::placeholder, 
+main section.contact .container .experience .section-column form .feedback-form-grid .form-textarea-feedback::placeholder {
+    color: #aaa;
+}
+
+main section.contact form .submit-btn,
+main section.contact .container .experience .section-column form .submit-btn {
+    text-align: right;
+}
+
+main section.contact form .submit-btn input{
+    font-size: 0.8em;
+}
+
+main section.contact form .status-message {
+    text-align: center;
+    color:rgb(95, 3, 3);
+    margin-top: 10px;
+
+}
+/* END - style for contact section */
+
+/* START - style for footer section  */
+footer {
+    color:#160584;
+    width: 100%;
+}
+
+footer .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container .icon-grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, auto);
+}
+
+footer .container .icon-grid a {
+    color: inherit;
+    font-size:1rem;
+    text-decoration: none;
+}
+/* END - style for footer section  */

@@ -1,0 +1,22 @@
+<header>
+    <div class="container">
+        <h2 aria-label="Vitality Nectar"><span>Vitality</span>Nectar</h2>
+        <nav id="navbar">
+            <a href="{{ url_for('index') }}" aria-label="Home" tabindex="1">Home</a>
+            <a href="{{ url_for('benefits')}}" aria-label="Benefits" tabindex="2">Benefits</a>
+            <a href="{{ url_for('smoothies')}}" aria-label="Smoothies" tabindex="3">Smoothies</a>
+            <a href="{{ url_for('favourites')}}" aria-label="Favorites" tabindex="4">Favorites</a>
+            <a href="{{ url_for('contact')}}" aria-label="Contact" tabindex="5">Contact</a>
+        </nav>
+        <button class="hamburger">
+            <div class="bar"></div>
+        </button>
+    </div>
+</header>
+<nav class="mobile-nav">
+    <a href="{{ url_for('index') }}" aria-label="Home" tabindex="6">Home</a>
+    <a href="{{ url_for('benefits')}}" aria-label="Benefits" tabindex="7">Benefits</a>
+    <a href="{{ url_for('smoothies')}}" aria-label="Smoothies" tabindex="8">Smoothies</a>
+    <a href="{{ url_for('favourites')}}" aria-label="Favorites" tabindex="9">Favorites</a>
+    <a href="{{ url_for('contact')}}" aria-label="Contact" tabinex="10">Contact</a>
+</nav>
