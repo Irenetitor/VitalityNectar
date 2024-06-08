@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<section id="smoothie" class="smoothies" aria-labelledby="smoothie-heading">
+    <div class="container">
+
+        <div class="dual-header">
+            <h2 id="smoothie-heading">More about - <span class="smoothie-title">{{ smoothie_detail.recipename }}</span></h2>
+            <div class="separator-wrap">
+                <span class="separator separator-one"></span>
+                <span class="separator separator-two"></span>
+            </div>
+        </div>
+        <div class="smoothie-detail-grid">
+            <div class="smoothie-detail">
+                <figure class="img-box">
+                    <img src="..\static\img\smoothies\{{smoothie_detail.image}}" alt="Image for {{ smoothie_detail.recipename }}" class="img" />
+                </figure>
+                <div class="content">
+                    <h3>Description</h3>
+                    <p> {{ smoothie_detail.rest }} </p>
+                </div>
+            </div>
+
+            <div class="smoothie-detail">
+                <figure class="img-box">
+                    <img src="..\static\img\ingredients.png" alt="Ingredient image" class="img" />
+                </figure>
+                <div class="content">
+                    <h3>Ingredients</h3>
+                   <p> {{ smoothie_detail.ingredients }} </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

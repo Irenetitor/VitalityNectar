@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from models import db
+from flask import Flask, render_template, request
+from models import Benefits, Smoothies, db
 from utils import initialize_db
 
 app = Flask(__name__)
@@ -16,11 +16,18 @@ def index():
 
 @app.route('/benefits')
 def benefits():
-    return render_template('benefits.html')
+    all_benefits_list = Benefits.query.all()
+    return render_template('benefits.html', benefits_list = all_benefits_list)
 
 @app.route('/smoothies')
 def smoothies():
-    return render_template('smoothies.html')
+    all_smoothies_list = Smoothies.query.all()
+    return render_template('smoothies.html', smoothies_list = all_smoothies_list)
+
+@app.route('/smoothie-detail/<int:smoothie_id>')
+def smoothie_detail(smoothie_id):
+    smoothie_detail = Smoothies.query.get_or_404(smoothie_id)    
+    return render_template('smoothie_detail.html', smoothie_detail=smoothie_detail)
 
 @app.route('/favourites')
 def favourites():

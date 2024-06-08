@@ -2,12 +2,30 @@
 
 {% block content %}
 
-
-
-<section id="sentence" class="sentences">
+<section id="benefits" class="benefits" aria-labelledby="benefit-heading">
     <div class="container">
-        <span class="author">“Sip the Goodness, Experience the Fruitfulness!”</span>
+        <div class="dual-header">
+            <h2 id="benefit-heading">Discover the Many Health Benefits of Smoothies</h2>
+            <div class="separator-wrap">
+                <span class="separator separator-one"></span>
+                <span class="separator separator-two"></span>
+            </div>
+        </div>
+        <div class="benefits-list">
+            {% for benefit in benefits_list %}
+            <div class="benefit">
+                <button class="tittle" tabindex="0">
+                    {{ benefit['tittle'] }}
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="description">
+                    <p>{{ benefit['description'] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
+
 
 {% endblock %}

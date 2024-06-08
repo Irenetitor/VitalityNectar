@@ -7,9 +7,18 @@ db = SQLAlchemy()
 class Smoothies(db.Model):
     recid = db.Column(db.Integer, primary_key=True)
     recipename = db.Column(db.String(20), nullable=False)
-    description = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.String(100), nullable=False)
+    rest = db.Column(db.String(200), nullable=False)
     ingredients = db.Column(db.String(200), nullable=False)
-    image = db.Column(db.Text, nullable=False)
+    image = db.Column(db.Text, nullable=False)    
 
     def __repr__(self) -> str:
-        return f"User(recid={self.recid}, recipename={self.recipename}, image={self.image})"
+        return f"Smoothie(recid={self.recid}, recipename={self.recipename}, image={self.image})"
+
+class Benefits(db.Model):
+    benid = db.Column(db.Integer, primary_key=True)
+    tittle = db.Column(db.String(20), nullable=False)
+    description = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self) -> str:
+        return f"Benefit(benid={self.benid}, tittle={self.tittle}, description={self.description})"   

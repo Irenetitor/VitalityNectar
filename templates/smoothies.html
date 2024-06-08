@@ -3,10 +3,33 @@
 {% block content %}
 
 
-
-<section id="sentence" class="sentences">
+<section id="smoothie" class="smoothies" aria-labelledby="smoothie-heading">
     <div class="container">
-        <span class="author">“Sip the Goodness, Experience the Fruitfulness!”</span>
+
+        <div class="dual-header">
+            <h2 id="smoothie-heading">Smoothies</h2>
+            <div class="separator-wrap">
+                <span class="separator separator-one"></span>
+                <span class="separator separator-two"></span>
+            </div>		 
+        </div>
+
+        <div class="smoothies-grid">
+            {% for smoothie in smoothies_list %}
+                <div class="smoothie">
+                    <img src="static\img\smoothies\{{ smoothie.image }}" alt="Image for {{ smoothie.recipename }}" class="content-img" />
+                    <div class="content">
+                        <div class="smoothie-title">
+                            <h3 >{{ smoothie.recipename }}</h3>
+                        </div>
+                        <div class="description">
+                            <p> {{ smoothie.description }} </p>
+                            <a href="{{ url_for('smoothie_detail', smoothie_id=smoothie.recid)}}" class="button">Sip Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 

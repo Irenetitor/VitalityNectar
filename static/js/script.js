@@ -31,8 +31,31 @@ window.onload = function () {
         }
     });
 
+   // Enabling/Disabling answers and changing background for benefits 
+
+   var tittle = document.getElementsByClassName("tittle");
+   var i = 0;
+   for (i = 0; i < tittle.length; i++) {
+       console.log(tittle[i])
+
+       tittle[i].addEventListener("click", function () {
+           this.firstElementChild.classList.toggle("fa-chevron-down")
+           this.firstElementChild.classList.toggle("fa-chevron-up")
+           this.classList.toggle("active")
+
+           var desc = this.nextElementSibling;
+           if (desc.style.display === "block") {
+                desc.style.display = "none";
+           } else {
+                desc.style.display = "block";
+           }
+       }
+       )
+   }
 
 }
+
+
 
 function showTab(tabNumber) {
     const tabs = document.querySelectorAll('.tab');
