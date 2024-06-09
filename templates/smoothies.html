@@ -15,16 +15,17 @@
         </div>
 
         <div class="smoothies-grid">
-            {% for smoothie in smoothies_list %}
+            {% for sm in smoothies_list %}
                 <div class="smoothie">
-                    <img src="static\img\smoothies\{{ smoothie.image }}" alt="Image for {{ smoothie.recipename }}" class="content-img" />
+                    <img src="static\img\smoothies\{{ sm.image }}" alt="Image for {{ sm.recipename }}" class="content-img" />
                     <div class="content">
                         <div class="smoothie-title">
-                            <h3 >{{ smoothie.recipename }}</h3>
+                            <h3 >{{ sm.recipename }}</h3>
                         </div>
                         <div class="description">
-                            <p> {{ smoothie.description }} </p>
-                            <a href="{{ url_for('smoothie_detail', smoothie_id=smoothie.recid)}}" class="button">Sip Details</a>
+                            <p> {{ sm.description }} </p>
+                            <a href="{{ url_for('smoothie_detail', smoothie_id=sm.recid)}}" class="button">Sip Details</a>
+                            <i class="fa-heart heart-size {{ 'fas heart-filled' if sm.recid in recid_list else 'far'}}" id="{{ sm.recid }}" title="Add to favorites" aria-hidden="true" aria-label="Add to favourites"></i>
                         </div>
                     </div>
                 </div>

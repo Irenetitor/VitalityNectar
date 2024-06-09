@@ -22,3 +22,10 @@ class Benefits(db.Model):
 
     def __repr__(self) -> str:
         return f"Benefit(benid={self.benid}, tittle={self.tittle}, description={self.description})"   
+
+class Favourites(db.Model):
+    fid = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    recid = db.Column(db.Integer, db.ForeignKey('smoothies.recid'), nullable=False)
+    
+    def __repr__(self) -> str:
+        return f"Favourites(fid={self.fid}, recid={self.recid})"

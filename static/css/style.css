@@ -34,6 +34,25 @@ section h2 {
     cursor: pointer;
 }
 
+.right-button{
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+.far.fa-heart {
+    cursor: pointer;
+    color: #ccc;
+}
+
+.heart-size {
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem;
+}
+
+.heart-filled{
+    color: red;
+}
+
 .container {
     width: 100%;
     max-width: 1600px;

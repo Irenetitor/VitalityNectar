@@ -1,7 +1,7 @@
 
 import csv
 from config import RESOURCE_BENEFITS, RESOURCE_SMOOTHIES
-from models import Benefits, Smoothies, db
+from models import Benefits, Favourites, Smoothies, db
 
 
 def initialize_db():
@@ -36,19 +36,33 @@ def insert_all_smoothies(csv_file):
     db.session.commit()
     
 def insert_all_benefits(csv_file):
-    with open(csv_file, 'r') as f:
-        
-        reader = csv.DictReader(f)
-        
+    with open(csv_file, 'r') as f:       
+        reader = csv.DictReader(f)        
         for row in reader:
             item = Benefits(
                 benid=row['benid'],
                 tittle=row['tittle'],
                 description=row['description'])
+        
             db.session.add(item)
             
     db.session.commit()
         
+        
+def toggle_favourite_db(rid):
+    # Check if the row exists in the favourites
+    row = Favourites.query.filter_by(recid=rid).first()
+    
+    if row:
+        # Remove the row if it exists
+        db.session.delete(row)
+    else:
+        # Add the row if it does not exist
+        row = Favourites(recid=rid)
+        db.session.add(row)
+    
+    db.session.commit()
+    
        
     
     
