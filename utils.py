@@ -7,8 +7,8 @@ from models import Benefits, Favourites, Smoothies, db
 def initialize_db():
     delete_all_smoothies()
     delete_all_benefits()
-    insert_all_smoothies(RESOURCE_SMOOTHIES)
-    insert_all_benefits(RESOURCE_BENEFITS)
+    insert_all_smoothies('smoothies.csv')
+    insert_all_benefits('benefits.csv')
     
 def delete_all_smoothies():
     Smoothies.query.delete()
