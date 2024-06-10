@@ -1,5 +1,4 @@
 from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
-from sqlalchemy import null
 from models import Benefits, Contact, Favourites, Feedback, Smoothies, db
 from utils import delete_favourite, initialize_db, toggle_favourite_db
 
