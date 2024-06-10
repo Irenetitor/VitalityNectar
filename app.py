@@ -1,7 +1,7 @@
-from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
 from sqlalchemy import null
-from models import Benefits, Favourites, Smoothies, db
-from utils import initialize_db, toggle_favourite_db
+from models import Benefits, Contact, Favourites, Smoothies, db
+from utils import delete_favourite, initialize_db, toggle_favourite_db
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -47,13 +47,43 @@ def toggle_favourite(recid):
     new_val = not in_favourite_val
     return jsonify(new_in_favourite=new_val)
     
+@app.route('/remove_favourite/<int:recid>')
+def remove_favourite(recid):
+    delete_favourite(recid)
+    return redirect(url_for('favourites'))
+
+
 @app.route('/remove_all_favourites', methods=['POST'])
 def remove_all_favourites():
-    # Delete all records from the Favourites table
-    Favourites.query.delete()
-    db.session.commit()
+    try:
+        # Delete all records from the Favourites table
+        Favourites.query.delete()
+        db.session.commit()
+        flash('All favourites removed succesfully! Explore more on Smoothie page', 'success')
+    except Exception as e:
+        db.session.rollback()
+        flash('An error occurred while removing favourites.', 'error')
+    
     return redirect(url_for('favourites'))
     
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@app.route('/contact-list')
+def contact_list():
+    all_contact_list = Contact.query.all()
+    return render_template('contact-list.html', contact_list=all_contact_list)
+
+
+@app.route('/submit_contact_form', methods=['POST'])
+def submit_contact():
+    new_name = request.form.get('name')
+    new_email = request.form.get('email')
+    new_message = request.form.get('message')
+    
+    new_contact = Contact(name=new_name, email=new_email, message=new_message)
+    db.session.add(new_contact)
+    db.session.commit()
+    
+    return redirect(url_for('contact'))    

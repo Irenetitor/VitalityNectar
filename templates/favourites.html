@@ -23,16 +23,32 @@
                     <div class="content">
                         <h3> {{ sm.recipename }}</h3> <br>
                         <h3>Description</h3>
-                        <p> {{ sm.description }} </p> <br>
+                        <p> {{ sm.rest }} </p> <br>
                         <h3>Ingredients</h3>
                         <p> {{ sm.ingredients }} </p>
                     </div>
-                </div>
+                    <a title="Remove Favourite" href="{{ url_for('remove_favourite', recid = sm.recid)}}"><i class="fas fa-times remove-item"></i></a>
+                </div> 
+                
             {% endfor %}
         </div> 
-        <form class="right-button" action="{{url_for('remove_all_favourites')}}" method="post">
-            <button type="submit" class="button">Remove all Favourites</button><br>
-        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} centered-div">{{ message }}</div>
+                {% endfor %}
+            {% elif fav_smoothies_list|length == 0%}
+                <div class="centered-div">No favourites added. Explore more on Smoothie page</div>
+            {% endif %}
+        {% endwith %}
+
+        {% if fav_smoothies_list|length > 0 %}
+            <form class="right-button" action="{{url_for('remove_all_favourites')}}" method="post">
+                <button type="submit" class="button">Remove all Favourites</button><br>
+            </form>        
+
+        {% endif %}
     </div>
 </section>
 

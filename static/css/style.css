@@ -53,6 +53,16 @@ section h2 {
     color: red;
 }
 
+.centered-div {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.remove-item {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
 .container {
     width: 100%;
     max-width: 1600px;
@@ -903,11 +913,11 @@ main section.contact .container .experience .feedback {
     main section.contact .container .experience .info {
         width: 100%; 
         padding: 1rem;
-    }
+}
     main section.contact .container .experience .feedback {
-        width: 100%; 
-        padding: 1rem;
-    }
+    width: 100%;
+    padding: 1rem;
+}
 }
 
 main section.contact .container .experience .info .img-box {

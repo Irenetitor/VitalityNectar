@@ -2,11 +2,57 @@
 
 {% block content %}
 
-
-
-<section id="sentence" class="sentences">
+<section id="feedback" class="contact experience" tabindex="0" aria-labelledby="contact-heading">
     <div class="container">
-        <span class="author">“Sip the Goodness, Experience the Fruitfulness!”</span>
+
+        <div class="dual-header">
+            <h2 id="contact-heading">Recipe Roundup & Reviews</h2>
+            <div class="separator-wrap">
+                <span class="separator separator-one"></span>
+                <span class="separator separator-two"></span>
+            </div>		 
+        </div>
+        <div class="feedback">
+                <h3 id="contact-heading">Enter your valuable <span>feedback</span> about this website and contribute with <span>additional recipes</span> &#128221;</h3> <br>
+                <form id="contactForm2" onsubmit="return validateFeedbackForm()">
+                    <div class="feedback-form-grid">
+                        <input type="text" class="form-input-feedback" id="name-feedback" placeholder="Name" tabindex="1" aria-label="Your Name">
+                        <textarea class="form-textarea-feedback" id="user-feedback" placeholder="Your feedback" tabindex="2" aria-label="Your Feedback"></textarea>
+                    </div>
+                    <div class="submit-btn">
+                        <input type="submit" value="Send" class="button" tabindex="3" aria-label="Submit Form">
+                    </div>
+                    <div id="status-message2" class="status-message"></div>
+                </form>
+        </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact" class="contact" tabindex="4" aria-labelledby="contact-heading">
+    <div class="container">
+
+        <div class="dual-header">
+            <h2 id="contact-heading">Contact</h2>
+            <div class="separator-wrap">
+                <span class="separator separator-one"></span>
+                <span class="separator separator-two"></span>
+            </div>		 
+        </div>
+
+        <form id="contactForm" action="{{ url_for('submit_contact')}}" method="post" onsubmit="return validateContactForm() ">
+            <div class="form-grid">
+                <input type="text" class="form-input" id="name" name='name' placeholder="Name" tabindex="5" aria-label="Your Name">
+                <input type="text" class="form-input" id="email" name='email' placeholder="Email" tabindex="6" aria-label="Your Email">
+                <textarea class="form-textarea" id="message" name="message" placeholder="Message" tabindex="7" aria-label="Your Message"></textarea>
+            </div>
+            <div class="submit-btn">
+                <input type="submit" value="Submit" class="button" tabindex="8" aria-label="Submit Form">
+            </div>
+            <div id="status-message" class="status-message"></div>
+        </form>
     </div>
 </section>
 

@@ -63,6 +63,13 @@ def toggle_favourite_db(rid):
     
     db.session.commit()
     
+def delete_favourite(rid):
+    row = Favourites.query.filter_by(recid=rid).first()
+    
+    if row:
+        db.session.delete(row)
+        db.session.commit()
+    
        
     
     

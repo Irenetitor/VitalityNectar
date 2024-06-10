@@ -29,3 +29,12 @@ class Favourites(db.Model):
     
     def __repr__(self) -> str:
         return f"Favourites(fid={self.fid}, recid={self.recid})"
+    
+class Contact(db.Model):
+    cid = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(30), nullable=False)
+    message = db.Column(db.String(500), nullable=False)
+    
+    def __repr__(self) -> str:
+        return f"Contact(cid={self.cid}, name={self.name}, email={self.email}, message={self.message})"
