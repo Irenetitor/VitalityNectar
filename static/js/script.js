@@ -104,11 +104,25 @@ function showTab(tabNumber) {
     });
 }
 
-function validateContactForm() {
+function validateFeedbackform(feedback) {
+    const inputTextDOM = document.getElementById('name-feedback');
+    const textAreaDOM = document.getElementById('user-feedback');
 
-    console.log("form submitted");
+    //validate name
+    const namePattern = /^[A-Za-z\s]+$/;
+    let inputName = inputTextDOM.value;
+    if (inputName.trim() == "") {
+        statusMessageDOM.textContent = "Name is empty. Please enter a valid name (letters only)!!"
+        return false;
+    } else if (!namePattern.test(inputName)) { 
+        statusMessageDOM.textContent = "Please enter a valid name (letters only)!!"
+        return false;
+    }
+
+}
+
+function validateContactForm() {
     const inputTextDOM = document.getElementById('name');
-    console.log(inputTextDOM.value)
     const inputEmailDOM = document.getElementById('email');
     const textAreaDOM = document.getElementById('message');
     const statusMessageDOM = document.getElementById('status-message');

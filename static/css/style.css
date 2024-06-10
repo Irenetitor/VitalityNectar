@@ -14,7 +14,7 @@ section h2 {
     margin-bottom: 32px;
     text-transform: uppercase;
     color: #313131;
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .button {
@@ -24,7 +24,7 @@ section h2 {
     background: none;
     display: inline-block;
     color: #fff;
-    font: size 20px;
+    font-size:  20px;
     background-color: rgb(220, 153, 36);
     padding: 12px 16px;
     border-radius: 8px;
@@ -32,6 +32,14 @@ section h2 {
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+}
+
+@media (max-width: 1480px) {
+    .button {
+        font-size: 15px;
+        padding: 8px 12px;
+        font-weight: 500;
+    }
 }
 
 .right-button{
@@ -142,7 +150,7 @@ header .container nav a {
 }
 
 .is-scrolling {
-    background-color: #d3330b;  /************************************* COLOR  */
+    background-color: #d3330b;
 }
 
 
@@ -208,7 +216,7 @@ header .container nav a {
     min-height: 100vh;
     display: block;
     z-index: 98;
-    background-color: #9c5f37;  /************************************* COLOR  */
+    background-color: #9c5f37;
     padding-top: 7rem;
     transition: 0.4s;
 }
@@ -220,7 +228,7 @@ header .container nav a {
     max-width: 12rem;
     margin: 0 auto 1rem;
     padding: 0.75rem 1rem;
-    background-color: #86440a;  /************************************* COLOR  */
+    background-color: #86440a;
     color: #fff;
     text-decoration: none;
 }
@@ -233,7 +241,7 @@ header .container nav a {
 }
 
 .mobile-nav a:hover {
-    background-color: #65401d;  /************************************* COLOR  */
+    background-color: #65401d;
 }
 
 .mobile-nav.is-active {
@@ -260,7 +268,7 @@ main section.banner:after {
     right: 0;
     bottom: 0;
     z-index: 0;
-    background-color:  #5f2f01e0;  /* COLOR  */
+    background-color:  #5f2f01e0;
     opacity: 0.8
 }
 
@@ -300,6 +308,7 @@ main section.banner .container h3 {
         margin-bottom: 16px;
     }
 }
+
 /* END - Banner styles for all pages */
 
 /* START - Styles for section headers with separator line below */
@@ -312,9 +321,16 @@ main section .container .dual-header {
 main section .container .dual-header h2 {
     text-transform: uppercase;
     font-size: 2rem;
-    font-weight: 500;
     margin-bottom: 0.5em;
 }
+
+@media (max-width: 900px) {
+    main section .container .dual-header h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
 
 main section .container .dual-header .separator-wrap {
 width: 100%;
@@ -356,7 +372,7 @@ main section.reason {
 main section.reason .container .tab-container {
     display: flex;
     justify-content: space-around;
-    background-color: #fbc83dc3;   /************************************* COLOR  */
+    background-color: #fbc83dc3;
     padding: 2rem;
     border-radius: 5px;
 }
@@ -364,7 +380,13 @@ main section.reason .container .tab-container {
 @media (max-width: 900px) {
     main section.reason .container .tab-container {
         flex-direction: column;
+        
     }
+
+    main section.reason .container .tab-container .tab {
+        margin-bottom: 0.5rem;
+    }
+
 }
 
 main section.reason .container .tab-container .tab {
@@ -419,7 +441,7 @@ main section.quotes .quote-container {
     max-width: 240rem;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #f8f8e5; /************************************* COLOR ************************ */
+    background-color: #f8f8e5;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(97, 12, 12, 0.5);
 }
@@ -440,7 +462,7 @@ main section.curiosities .curiosity-container {
     max-width: 240rem;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #ffeaa0; /************************************* COLOR ************************ */
+    background-color: #ffeaa0;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(97, 12, 12, 0.5);
 }
@@ -484,17 +506,13 @@ main section.benefits .container{
 
 main section.benefits .container .benefits-list {
     display: block;
-    /* grid-template-rows: repeat(4, 1fr);
-    grid-gap: 16px; */
 }
 
 main section.benefits .container .benefits-list .benefit {
-    /* background-color: #5689639d; */
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 6px 12px rgba(97, 12, 12, 0.5);
     margin-bottom: 0.8rem
-    /* display: flex; */
 }
 
 .active,
@@ -531,12 +549,6 @@ main section.benefits .container .benefits-list .benefit .description {
 main section.benefits .container .benefits-list .benefit .description p {
     color: rgba(0, 0, 0, 0.7);
     line-height: 1.4;
-}
-
-@media (max-width: 1268px) {
-    /* main section.faqs .container .faqs-list .faq .content ul li {
-        font-size: 0.8em;
-    } */
 }
 
 @media (max-width:1024px) {
@@ -611,9 +623,7 @@ main section.smoothies .container .smoothies-grid .smoothie .content-img {
 }
 
 main section.smoothies .container .smoothies-grid .smoothie .content {
-    /* opacity: 0; */
     color: #fff;
-    /* padding: 16px; */
     transition: 0.5s;
     height: 100%;
     position: absolute;
@@ -626,7 +636,7 @@ main section.smoothies .container .smoothies-grid .smoothie .content {
 
 main section.smoothies .container .smoothies-grid .smoothie .content .smoothie-title{
     opacity: 1;
-    background-color: #2f1900e0;  /************************************* COLOR ************************ */
+    background-color: #2f1900e0;
     padding: 16px;
 }
 
@@ -638,7 +648,31 @@ main section.smoothies .container .smoothies-grid .smoothie .content .descriptio
 main section.smoothies .container .smoothies-grid .smoothie:hover .content {
     opacity: 1;
     padding: 16px;
-    background-color: #2f1e00e0;  /************************************* COLOR ************************ */
+    background-color: #2f1e00e0;
+}
+
+@media (max-width: 1480px) {
+    main section.smoothies .container .smoothies-grid .smoothie:hover .content,
+    main section.smoothies .container .smoothies-grid .smoothie .content .smoothie-title,
+    main section.smoothies .container .smoothies-grid .smoothie .content .description {
+        padding: 8px;
+    }
+
+    main section.smoothies .container .smoothies-grid .smoothie .content .description p {
+        font-size: 0.9em;    
+    }
+}
+
+@media (max-width: 1200px) {
+    main section.smoothies .container .smoothies-grid .smoothie:hover .content,
+    main section.smoothies .container .smoothies-grid .smoothie .content .smoothie-title,
+    main section.smoothies .container .smoothies-grid .smoothie .content .description {
+        padding: 6px;
+    }
+
+    main section.smoothies .container .smoothies-grid .smoothie .content .description p {
+        font-size: 0.8em;    
+    }
 }
 
 main section.smoothies .container .smoothies-grid .smoothie:hover .content .smoothie-title{
@@ -726,46 +760,6 @@ main section.smoothies .container .smoothie-detail-grid .smoothie-detail .conten
     font-size: 1em;
 }
 
-/* @media (max-width: 1268px) {
-    main section.tips .container .exercise-detail-grid .exercise-detail .content ul li {
-        font-size: 0.8em;
-    }
-}
-
-@media (max-width:1024px) {
-    main section.tips {
-        padding-top: 64px;
-    }
-    main section.tips .container .exercise-detail-grid .exercise-detail .content ul li {
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width:512px) {
-    main section.tips .container .exercise-detail-grid .exercise-detail {
-        display: inline;
-    }
-    
-    main section.tips .container .exercise-detail-grid .exercise-detail .img-box {
-        border-right: 0px;
-        width: 100%;
-        height: 105px;
-        border-bottom: 5px solid #f37d2a;
-    }
-    
-    main section.tips .container .exercise-detail-grid .exercise-detail .img-box .img {
-        width: 100%;
-        height: 100px;
-    }
-
-    main section.tips .container .exercise-detail-grid .exercise-detail .content h3 {
-        font-size: 0.9em;
-    }
-
-    main section.tips .container .exercise-detail-grid .exercise-detail .content ul li {
-        font-size: 0.7em;
-    } 
-}*/
 /*********************************************************************************************************/
 /*********************************** End - style for Smoothie detail Page ********************************/
 /*********************************************************************************************************/
@@ -773,86 +767,7 @@ main section.smoothies .container .smoothie-detail-grid .smoothie-detail .conten
 /*********************************************************************************************************/
 /*********************************** Start - style for Favourites Page ***********************************/
 /*********************************************************************************************************/
-main section.styles-banner {
-    min-height: 60vh;
-    background-image: url("../img/banner_general.jpg");
-}
 
-main section.styles {
-    background-color: #eee;
-    padding-top: 64px;
-}
-
-main section.styles .container{
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
-
-/* START - style for material section */
-
-main section.styles .container .materials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
-}
-
-@media (max-width: 1024px) {
-    main section.materials {
-        padding-top: 64px;
-    }
-    
-    main section.styles .container .materials-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    main section.styles .container .materials-grid {
-        grid-template-columns: 2fr;
-    }
-}
-
-main section.styles .container .materials-grid .material {
-    background-color: #e3f1fe;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0px 6px 12px rgba(15, 6, 118, 0.476);
-}
-
-main section.styles .container .materials-grid .material .img-box {
-    display: block;
-    width: 100%;
-    border-bottom: 5px solid #f37d2a;
-}
-
-main section.styles .container .materials-grid .material .img-box .img {
-    display: block;
-    width: 100%;
-    height: 398px;
-    object-fit: cover;
-}
-
-main section.styles .container .materials-grid .material .content {
-    padding: 16px;
-    font-size: 1em;
-}
-
-main section.styles .container .materials-grid .material .content ul {
-    padding-left: 20px;
-}
-
-@media (max-width: 1268px) {
-    main section.styles .container .materials-grid .material .content ul li {
-        font-size: 0.8em;
-    }
-}
-
-@media (max-width: 1024px) {
-    main section.styles .container .materials-grid .material .content ul li {
-        font-size: 0.9em;
-    }
-}
-/* END - style for material section */
 /*********************************************************************************************************/
 /*********************************** End - style for Favourites Page *************************************/
 /*********************************************************************************************************/
@@ -865,99 +780,122 @@ main section.contact-banner {
     background-image: url("../img/banner_general.jpg");
 }
 
-main section.contacts {
-    background-color: #eee;
-    padding-top: 64px;
+/* START - style for feedback section */
+main section.feedback {
+    background-color:  rgb(255, 247, 236);
 }
 
-main section.contacts .container{
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
-/*********************************************************************************************************/
-/*********************************** End - style for Contact Page **************************************/
-/*********************************************************************************************************/
-
-/* START - style for contact section */
-main .contact {
-    background-color:  rgb(213, 220, 236);
-}
-
-main .experience {
-    background-color:  rgb(255, 255, 255);
-}
-
-main section.contact .container {
+main section.feedback .container {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
 
-main section.contact .container .experience {
-    display: flex;
+main section.feedback .container .feedback {
+    text-align: center;
 }
 
-main section.contact .container .experience .info {
-    width: 50%; 
-    padding-right: 1rem;
-}
-
-main section.contact .container .experience .feedback {
-    width: 50%; 
-    padding-left: 1rem;
-}
-
-@media (max-width: 768px) {
-    main section.contact .container .experience {
-        flex-direction: column;
-    }
-    main section.contact .container .experience .info {
-        width: 100%; 
-        padding: 1rem;
-}
-    main section.contact .container .experience .feedback {
-    width: 100%;
-    padding: 1rem;
-}
-}
-
-main section.contact .container .experience .info .img-box {
-    display: block;
-    width: 100%;
-    border-bottom: 5px solid #f37d2a;
-}
-
-main section.contact .container .experience .info .img-box .img {
-    display: block;
-    width: 100%;
-    height: 398px;
-    object-fit: cover;
-}
-
-main section.contact .container .experience .info .content {
-    padding: 16px;
-    font-size: 1em;
-}
-
-main section.contact .container .experience .feedback form {
+main section.feedback .container .feedback h3 {
+    font-size:1.1rem;
+    display: flow-root;
     margin: 0 auto;
-    width: 100%;
+}
+main section.feedback .container .feedback h3 span {
+    color: orange;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 2px;
 }
 
-main section.contact .container .experience .feedback form .feedback-form-grid {
+main section.feedback .container form {
+    margin: 0 auto;
+    max-width: 680px;
+}
+
+main section.feedback .container form .form-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 16px;
     margin-bottom: 16px;
 }
 
-main section.contact .container .experience .feedback form .feedback-form-grid .form-input-feedback, 
-main section.contact .container .experience .feedback form .feedback-form-grid .form-textarea-feedback {
+@media (max-width:767px) {
+    main section.feedback .container form .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+main section.feedback .container form .form-grid .form-input, 
+main section.feedback .container form .form-grid .form-textarea {
     appearance: none;
+    border: none;
     outline: none;
     border-radius: 8px;
     padding: 16px;
     font-size: 1em;
     color: #313131;
+}
+
+main section.feedback .container form .form-grid .form-textarea {
+    grid-column: 1/-1;
+}
+
+main section.feedback .container form .form-grid .form-input::placeholder, 
+main section.feedback .container form .form-grid .form-textarea::placeholder {
+    color: #aaa;
+}
+
+main section.feedback form .submit-btn{
+    text-align: right;
+}
+
+main section.feedback form .submit-btn input{
+    font-size: 0.8em;
+}
+/* END - style for feedback section */
+
+/* START - style for feedback-list section */
+main section.feedback-list {
+    background-color:  rgb(255, 247, 236);
+}
+
+main section.feedback-list .container {
+    padding-bottom: 4rem;
+}
+
+main section.feedback-list .container .feedback-list-detail-grid {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 16px;
+}
+
+main section.feedback-list .container .feedback-list-detail-grid .feedback-list-detail {
+    background-color: rgb(255, 243, 225);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(97, 12, 12, 0.5);
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    main section.feedback-list .container .feedback-list-detail-grid .feedback-list-detail  {
+        display: inline;
+    }
+}
+
+main section.feedback-list .container .feedback-list-detail-grid .feedback-list-detail .content {
+    padding: 16px;;
+}
+
+/* END - style for feedback-list section */
+
+/* START - style for contact section */
+main .contact {
+    background-color: rgb(255, 235, 204);
+}
+
+main section.contact .container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 main section.contact .container form {
@@ -994,14 +932,11 @@ main section.contact .container form .form-grid .form-textarea {
 }
 
 main section.contact .container form .form-grid .form-input::placeholder, 
-main section.contact .container form .form-grid .form-textarea::placeholder,
-main section.contact .container .experience .section-column form .feedback-form-grid .form-input-feedback::placeholder, 
-main section.contact .container .experience .section-column form .feedback-form-grid .form-textarea-feedback::placeholder {
+main section.contact .container form .form-grid .form-textarea::placeholder {
     color: #aaa;
 }
 
-main section.contact form .submit-btn,
-main section.contact .container .experience .section-column form .submit-btn {
+main section.contact form .submit-btn{
     text-align: right;
 }
 
@@ -1016,12 +951,15 @@ main section.contact form .status-message {
 
 }
 /* END - style for contact section */
+/*********************************************************************************************************/
+/*********************************** End - style for Contact Page **************************************/
+/*********************************************************************************************************/
 
 /*********************************************************************************************************/
 /*********************************** Start - style for Footer ********************************************/
 /*********************************************************************************************************/
 footer {
-    color:#160584;
+    color:#7a0e06;
     width: 100%;
 }
 

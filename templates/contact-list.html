@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section id="smoothie" class="smoothies" aria-labelledby="smoothie-heading">
+    <div class="container">
+
+        <div class="dual-header">
+            <h2 id="smoothie-heading">All Contact List</h2>
+            <div class="separator-wrap">
+                <span class="separator separator-one"></span>
+                <span class="separator separator-two"></span>
+            </div>
+        </div>
+        <div class="smoothie-detail-grid">
+            {% for contact in contact_list %}
+                <div class="smoothie-detail">
+                    <div class="content">
+                        <h3> Name: {{ contact.name }}</h3> <br>
+                        <p> Email: {{ contact.email }} </p> <br>
+                        <p> Message: {{ contact.message }} </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div> 
+    </div>
+</section>
+
+{% endblock %}

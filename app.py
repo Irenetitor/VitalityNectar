@@ -1,6 +1,6 @@
 from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
 from sqlalchemy import null
-from models import Benefits, Contact, Favourites, Smoothies, db
+from models import Benefits, Contact, Favourites, Feedback, Smoothies, db
 from utils import delete_favourite, initialize_db, toggle_favourite_db
 
 app = Flask(__name__)
@@ -68,7 +68,8 @@ def remove_all_favourites():
     
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    all_feedback_list = Feedback.query.all()
+    return render_template('contact.html', feedback_list=all_feedback_list)
 
 @app.route('/contact-list')
 def contact_list():
@@ -87,3 +88,14 @@ def submit_contact():
     db.session.commit()
     
     return redirect(url_for('contact'))    
+
+@app.route('/submit_feedback_form', methods=['POST'])
+def submit_feedback():
+    new_name = request.form.get('fname')
+    new_feedback = request.form.get('feedback')
+    
+    feedback_obj = Feedback(name=new_name, feedback=new_feedback)
+    db.session.add(feedback_obj)
+    db.session.commit()
+    
+    return redirect(url_for('contact'))
