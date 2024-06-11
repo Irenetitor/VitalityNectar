@@ -7,8 +7,8 @@ from models import Benefits, Favourites, Smoothies, db
 def initialize_db():
     delete_all_smoothies()
     delete_all_benefits()
-    insert_all_smoothies('smoothies.csv')
-    insert_all_benefits('benefits.csv')
+    insert_all_smoothies(RESOURCE_SMOOTHIES)
+    insert_all_benefits(RESOURCE_BENEFITS)
     
 def delete_all_smoothies():
     Smoothies.query.delete()
@@ -19,7 +19,7 @@ def delete_all_benefits():
     db.session.commit()
     
 def insert_all_smoothies(csv_file):
-    with open(csv_file, 'r') as f:
+    with open(csv_file, 'r', encoding='utf-8', errors='replace') as f:
         
         reader = csv.DictReader(f)
         

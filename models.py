@@ -6,10 +6,10 @@ db = SQLAlchemy()
 
 class Smoothies(db.Model):
     recid = db.Column(db.Integer, primary_key=True)
-    recipename = db.Column(db.String(20), nullable=False)
-    description = db.Column(db.String(100), nullable=False)
-    rest = db.Column(db.String(200), nullable=False)
-    ingredients = db.Column(db.String(200), nullable=False)
+    recipename = db.Column(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    rest = db.Column(db.Text, nullable=False)
+    ingredients = db.Column(db.Text, nullable=False)
     image = db.Column(db.Text, nullable=False)    
 
     def __repr__(self) -> str:
@@ -17,8 +17,8 @@ class Smoothies(db.Model):
 
 class Benefits(db.Model):
     benid = db.Column(db.Integer, primary_key=True)
-    tittle = db.Column(db.String(20), nullable=False)
-    description = db.Column(db.String(200), nullable=False)
+    tittle = db.Column(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
 
     def __repr__(self) -> str:
         return f"Benefit(benid={self.benid}, tittle={self.tittle}, description={self.description})"   
@@ -32,17 +32,17 @@ class Favourites(db.Model):
     
 class Contact(db.Model):
     cid = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(20), nullable=False)
-    email = db.Column(db.String(30), nullable=False)
-    message = db.Column(db.String(500), nullable=False)
+    name = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    message = db.Column(db.Text, nullable=False)
     
     def __repr__(self) -> str:
         return f"Contact(cid={self.cid}, name={self.name}, email={self.email}, message={self.message})"
     
 class Feedback(db.Model):
     fid = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(20), nullable=False)
-    feedback = db.Column(db.String(500), nullable=False)
+    name = db.Column(db.Text, nullable=False)
+    feedback = db.Column(db.Text, nullable=False)
     
     def __repr__(self) -> str:
         return f"Feedback(fid={self.fid}, name={self.name}, feedback={self.feedback})"
