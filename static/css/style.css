@@ -362,7 +362,7 @@ margin-bottom:2em;
 /*********************************** Start - style for Home Page *****************************************/
 /*********************************************************************************************************/
 main section.home-banner {
-    min-height: 100vh;
+    min-height: 70vh;
     background-image: url("../img/banner_general.jpg");
 }
 
