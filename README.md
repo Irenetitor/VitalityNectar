@@ -28,6 +28,87 @@
 
 5.	Contact Page - This webpage is split into two distinct sections. The first section is designed for users to provide feedback about the website or contribute additional recipes. The second section is dedicated to facilitating communication with the website’s developers for any other inquiries or purposes.
 
+## Deployment steps on Render.com
+
+### A. Setup Postgres DB Service
+1.	Login into Render Dashboard . Select PostgresSQL from New drop down menu.
+
+  ![alt text](resources\deployment_steps\image.png)
+
+2.	Specify
+    - Name of PostgresSQL instance  - “**vitality-nector-db**”
+    - Database – **vitalitynectordb**
+    - User – **vn1**
+    - Select nearest region – **Frankfurt(EU Central)**
+    - Make sure Postgres version is **16**
+    - Select Instance Type as **Free**
+    - Click on “**Create Database**” button
+
+![alt text](resources\deployment_steps\image-1.png)
+
+3.	PostgresSQL service will start in some time. Click on **Connect** drop down menu and from **Internal** tab copy **Internal Database URL **
+
+![alt text](resources\deployment_steps\image-2.png)
+
+
+
+### B. Setup Flask Web Service
+1.	Requirement.txt in github repo (https://github.com/Irenetitor/VitalityNectar) mentions package dependencies needed by render.com
+
+![alt text](resources\deployment_steps\image-3.png)
+
+
+2.	In Render.com, after login into dashboard select **Web service** from **New** drop down menu
+
+![alt text](resources\deployment_steps\image-4.png)
+
+
+3.	Select option – **Build and deploy from git repository** and click **Next** button
+
+![alt text](resources\deployment_steps\image-5.png)
+
+4.	Connect with gitrepo  **https://github.com/Irenetitor/VitalityNectar**
+
+![alt text](resources\deployment_steps\image-6.png)
+
+5.	Specify
+    - Name for web service instance – **VitalityNectar**
+    - Select nearest region – **Frankfurt(EU Central)**
+    - Branch for repo as **main**
+    - Keep Runtime as **Python 3**
+    - Build comment as $ **pip install -r requirements .txt**
+    - Start command as $ **gunicorn app:app**
+    - Select Instance Type as **Free**
+    - **IMPORTANT** – Mention Environment variable** DATABASE_URL** as copied **Internal Database URL** for deployed **PostgresSQL service** before while setup of **PostgresSQL database**.
+    - Click on **Create Web Service** button  
+
+![alt text](resources\deployment_steps\image-7.png)
+
+6.	After web service start is successful. Go to https://vitalitynectar.onrender.com to access website
+
+![alt text](resources\deployment_steps\image-8.png)
+
+
+Sample pages from website:
+
+Home Page - 
+![alt text](resources\deployment_steps\image-9.png)
+
+Benefits Page - 
+![alt text](resources\deployment_steps\image-10.png)
+
+Smoothies Page - 
+![alt text](resources\deployment_steps\image-11.png)
+
+Favourite Page - 
+![alt text](resources\deployment_steps\image-12.png)
+
+Contact Page - 
+![alt text](resources\deployment_steps\image-13.png)
+
+![alt text](resources\deployment_steps\demo_gif.gif)
+
+
 
 ## Instructions to access
 
